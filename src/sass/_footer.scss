@@ -1,0 +1,23 @@
+$footer-color: #212529;
+$text-color: #ffffff;
+
+@mixin layout-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+footer {
+  @include layout-footer;
+  background-color: $footer-color;
+
+  p {
+    color: $text-color;
+    margin-bottom: 0px;
+  }
+
+  &:hover {
+    background-color: #343a40;
+  }
+}
