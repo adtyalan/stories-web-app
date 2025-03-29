@@ -6,14 +6,27 @@ class HomePage extends LitElement {
   }
 
   render() {
-    return html` <header>
+    const isLoggedin = !!localStorage.getItem("token");
+
+    return html`
+      <header class="bg-white sticky-top">
         <nav-bar></nav-bar>
       </header>
       <main>
-        <stories-content></stories-content>
-        <modal-page></modal-page>
+        ${isLoggedin
+          ? html` <stories-content></stories-content> `
+          : html`
+              <h1
+                class="text-center font-monospace vh-100 d-flex justify-content-center align-items-center"
+              >
+                Login terlebih dahulu untuk melihat cerita
+              </h1>
+            `}
       </main>
-      <footer></footer>`;
+      <footer>
+        <p>© 2025 Story App</p>
+      </footer>
+    `;
   }
 }
 

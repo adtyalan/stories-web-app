@@ -10,6 +10,9 @@ import StoriesContent from "./components/stories-content";
 import HomePage from "./components/home-page";
 import AboutUs from "./components/about-us";
 import AddPage from "./components/add-page";
+import RegisterPage from "./components/register-page";
+import LoginPage from "./components/login-page";
+import DetailStory from "./components/detail-story";
 
 import { renderComponent, navigateTo } from "./routes/router";
 
