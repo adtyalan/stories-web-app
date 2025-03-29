@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { loginUser } from "../utils/api-request";
+import { renderComponent } from "../routes/router";
 
 class LoginPage extends LitElement {
   static properties = {
@@ -130,6 +131,7 @@ class LoginPage extends LitElement {
 
       if (localStorage.getItem("token")) {
         window.location.hash = "#home";
+        window.location.reload();
       }
     } catch (error) {
       console.error("Login failed", error);
